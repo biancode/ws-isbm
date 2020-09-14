@@ -256,31 +256,6 @@ paths:
       summary: Removes security tokens from a channel.
       tags:
         - ChannelManagement
-      requestBody:
-        description: 'The security tokens to remove: each token must be specified in full to be removed, i.e., specifying only the username of a UsernamePassword token is insufficient.'
-        content:
-          application/json:
-            schema:
-              type: array
-              items: 
-                $ref: '#/components/schemas/SecurityToken'
-              minItems: 1
-              uniqueItems: true
-            examples:
-              removingSecurityTokens:
-                summary: Simple example of removing security tokens from a Channel.
-                value:
-                  - username: user001
-                    password: password001
-                  - username: someOtherUser
-                    password: theirPassword
-          application/xml:
-            schema:
-              type: array
-              items: 
-                $ref: '#/components/schemas/SecurityToken'
-              minItems: 1
-              uniqueItems: true
       responses:
         '204':
           description: Security tokens successfully removed from the channel.
